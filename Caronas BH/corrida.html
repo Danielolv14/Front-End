@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corrida</title>
+  <link rel="stylesheet" href="assetsCorrida/style.css">
+  <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body>
+    <div class="wrapper row1">
+        <header id="header" class="hoc clear">
+          <div id="logo" class="fl_left"> 
+      
+            <h1 class="logoname"><a href="index.html">Caronas<span>BH</span></a></h1>
+      
+          </div>
+          <nav id="mainav" class="fl_right"> 
+      
+            <ul class="clear">
+              <li class="active"><a href="index.html">Home</a></li>
+              <li><a class="" href="cadastro.html">Cadastro</a>
+              </li>
+              <li><a class="" href="login.html">Login</a>
+              </li>
+              <li><a class="" href="perfil.html"><img id="usuario" src="images/demo/avatar.png" alt=""></a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+      </div>
+  <div class="container">
+    <h1>Corrida com <span id="driverName"></span></h1>
+    <div id="map"></div>
+    <div id="chat">
+      <div id="messages"></div>
+      <form id="messageForm">
+        <input type="text" id="messageInput" placeholder="Digite sua mensagem" required>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </div>
+  <script src="assetsCorrida/script.js"></script>
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=Your_API_Key&callback=initMap">
+  </script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #3c3c44;
+}
+
+.container {
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color:#ffffff;
+}
+
+img{
+  width: 30px;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  padding: 20px;
+  gap: 24px;
+}
+
+.driver {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 10px;
+  width: 180px;
+  gap: 20px;
+  position: relative;
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+}
+
+.driver i {
+  font-size: 88px;
+  margin-right: 10px;
+}
+
+.driver .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.driver h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.driver p {
+  margin: 5px 0;
+}
+
+button {
+  position: absolute;
+  bottom: 32px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.driver:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.driver:hover button {
+  display: block;
+  opacity: 1;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.material-icons-outlined {
+    width: 14%;
+    height: 20%;
+    transform: scale(.3);
+    color: #ffd700;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 20%;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.datetime-input {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.datetime-input label {
+  margin-bottom: 5px;
+}
+.datetime-input input {
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.datetime-input button {
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.datetime-input button:hover {
+  background-color: #0056b3;
+}
+

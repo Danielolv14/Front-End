@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('lastname').innerText = user.sobrenome;
       document.getElementById('Email').innerText = user.email;
       document.getElementById('telefone').innerText = user.celular;
+      document.getElementById('userType').value = user.type || 'Motorista';
+      document.getElementById('profileCarPlate').value = user.carPlate || '';
+      document.getElementById('profileCarModel').value = user.carModel || '';
 
       if (user.rating) {
         document.querySelector(`input[name="rating"][value="${user.rating}"]`).checked = true;
@@ -48,6 +51,28 @@ function logoutUser() {
 
   });
 
+  function updateUserType() {
+    const loggedInUserEmail = localStorage.getItem('loggedInUser');
+    const user = JSON.parse(localStorage.getItem(loggedInUserEmail));
+    user.type = document.getElementById('userType').value;
+    localStorage.setItem(loggedInUserEmail, JSON.stringify(user));
+}
 
-
+function updateUserCarInfo() {
+  const loggedInUserEmail = localStorage.getItem('loggedInUser');
+  const user = JSON.parse(localStorage.getItem(loggedInUserEmail));
+  user.carPlate = document.getElementById('profileCarPlate').value;
+  user.carModel = document.getElementById('profileCarModel').value;
+  localStorage.setItem(loggedInUserEmail, JSON.stringify(user));
+}
  
+function saveProfile() {
+  const loggedInUserEmail = localStorage.getItem('loggedInUser');
+  const user = JSON.parse(localStorage.getItem(loggedInUserEmail));
+  user.type = document.getElementById('userType').value;
+  user.carPlate = document.getElementById('profileCarPlate').value;
+  user.carModel = document.getElementById('profileCarModel').value;
+
+  localStorage.setItem(loggedInUserEmail, JSON.stringify(user));
+  alert('Perfil atualizado com sucesso!');
+}

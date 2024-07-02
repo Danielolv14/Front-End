@@ -85,27 +85,24 @@
   </main>
 </div>
 <div class="bgded overlay light">
-  <section id="services" class="hoc container clear"> 
-
+  <section id="services" class="hoc container clear">
     <div class="sectiontitle">
       <h6 class="heading font-x2">Procure um motorista</h6>
     </div>
     <ul class="nospace group elements elements-three">
       <li class="one_third">
-        <article><a href="#"><i class="fas fa-sliders-h"></i></a>
+        <article>
           <p><b>Coloque seu endereço </b></p><br>
-
-          <fieldset>
-            <input type="text" value="" placeholder="Endereço Inicial">
-            <input type="text" value="" placeholder="Endereço Final ">
-            <button type="submit" value="submit">Procurar</button>
-          </fieldset>
+          <form id="addressForm">
+            <fieldset>
+              <input type="text" value="" id="startAddress" placeholder="Endereço Inicial" required>
+              <input type="text" value="" id="endAddress" placeholder="Endereço Final" required>
+              <button type="submit">Procurar</button>
+            </fieldset>
+          </form>
         </article>
       </li>
-      
-      </li>
     </ul>
-
   </section>
 </div>
 
@@ -215,6 +212,16 @@
   </div>
 </div>
 <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+<script>
+  document.getElementById('addressForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const startAddress = document.getElementById('startAddress').value;
+    const endAddress = document.getElementById('endAddress').value;
+    localStorage.setItem('startAddress', startAddress);
+    localStorage.setItem('endAddress', endAddress);
+    window.location.href = 'motor.html';
+  });
+</script>
 <script src="layout/scripts/jquery.min.js"></script>
 <script src="layout/scripts/jquery.backtotop.js"></script>
 <script src="layout/scripts/jquery.easypiechart.min.js"></script>
